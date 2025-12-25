@@ -1,4 +1,4 @@
-package com.example.mvvmcleanarchitecture
+package com.example.mvvmcleanarchitecture.Presentation.UI
 
 import android.app.Application
 import androidx.room.Room

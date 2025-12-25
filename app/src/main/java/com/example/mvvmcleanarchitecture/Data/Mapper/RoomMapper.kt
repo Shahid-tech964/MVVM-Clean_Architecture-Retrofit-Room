@@ -1,18 +1,18 @@
 package com.example.mvvmcleanarchitecture.Data.Mapper
 
 import com.example.mvvmcleanarchitecture.Data.local.Record
-import com.example.mvvmcleanarchitecture.Domain.AppModel.AppRecord
+import com.example.mvvmcleanarchitecture.Domain.AppModel.EntityModel
 
 
 // converts room model to app model
-fun Record.toAppRecord(): AppRecord {
+fun Record.toAppRecord(): EntityModel {
 
-    return AppRecord(id = this.id, title = this.title, content = this.content)
+    return EntityModel(id = this.id, title = this.title, content = this.content)
 
 }
 
 // converts app model to room model
-fun AppRecord.toRecord(): Record {
+fun EntityModel.toRecord(): Record {
 
     return Record( title = this.title, content = this.content)
 

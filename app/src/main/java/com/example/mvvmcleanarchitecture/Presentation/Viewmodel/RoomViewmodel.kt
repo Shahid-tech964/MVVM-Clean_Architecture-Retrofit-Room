@@ -3,10 +3,9 @@ package com.example.mvvmcleanarchitecture.Presentation.Viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvvmcleanarchitecture.Data.RepositoryImpl.RoomRepositoryImplt
-import com.example.mvvmcleanarchitecture.Domain.AppModel.AppRecord
+import com.example.mvvmcleanarchitecture.Domain.AppModel.EntityModel
 import com.example.mvvmcleanarchitecture.Domain.Repository.RoomReposittory
 import com.example.mvvmcleanarchitecture.Domain.UserCase.TodoUseCases
-import com.example.mvvmcleanarchitecture.Myapp
 
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -19,7 +18,7 @@ class RoomViewmodel : ViewModel() {
       val todoUseCases= TodoUseCases(repo)
 
     //    get data from table which we have stored
-    val items: StateFlow<List<AppRecord>> = todoUseCases.getitemUsecase().stateIn(
+    val items: StateFlow<List<EntityModel>> = todoUseCases.getitemUsecase().stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000),
         initialValue = emptyList()
